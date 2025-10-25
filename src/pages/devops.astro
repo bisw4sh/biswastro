@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
 import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
 
@@ -8,39 +8,46 @@ const projects = [
     title: "Uheardd",
     desc: [
       "Built an infrastructure for a uheardd for frontend and backend deployment in EC2",
-      "Github actions and runner to react to the changes"
+      "Github actions and runner to react to the changes",
     ],
-    tech: ["Github Runner", "Github Action", "Docker", "Nginx"]
-  }];
+    tech: ["Github Runner", "Github Action", "Docker", "Nginx"],
+  },
+];
 ---
 
-<!DOCTYPE html>
-<html
->
+<!doctype html>
+<html>
   <Header title="DevOps | Biswash Dhungana" />
   <body>
     <div class="content">
-        <Sidebar selectedItem="devops" />
+      <Sidebar selectedItem="devops" />
       <nav class="main">
         <div class="container">
           <div class="back-nav-container">
             <a href="/" class="back-nav-button w-inline-block"
-              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                alt=""
+                class="back-nav-img"
+              />
               <div>Back</div></a
             >
           </div>
           <div class="content-container">
             <h1>DevOps</h1>
             <section class="items-container">
-                <div class="resouce-items">
-                    {projects.map(project => (
-                      <Project 
-                        title={project.title} 
-                        desc={project.desc}
-                        tech={project.tech}
-                      />
-                    ))}
-                  </div>
+              <div class="resouce-items">
+                {
+                  projects.map((project) => (
+                    <Project
+                      title={project.title}
+                      desc={project.desc}
+                      tech={project.tech}
+                    />
+                  ))
+                }
+              </div>
             </section>
           </div>
         </div>
