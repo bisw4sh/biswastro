@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 interface HeaderProps {
   title: string;
 }
@@ -9,7 +8,6 @@ const { title } = Astro.props as HeaderProps;
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>{title}</title>
-  <ViewTransitions />
   <meta content={title} property="og:title" />
   <meta content={title} property="twitter:title" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -21,7 +19,7 @@ const { title } = Astro.props as HeaderProps;
     crossorigin="anonymous"
   />
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
-  <script type="text/javascript">
+  <script is:inline type="text/javascript">
     !(function (o, c) {
       var n = c.documentElement,
         t = " w-mod-";
