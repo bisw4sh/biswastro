@@ -5,28 +5,37 @@ import Sidebar from "../components/Sidebar.astro";
 
 const projects = [
   {
+    title: "EasyUnsub Email Client",
+    desc: [
+      "Built scalable backend services in Node.js (TypeScript), integrating email providers like Outlook, Imail and Gmail with Firebase for authentication and real-time functionality.",
+      "Implemented Play Console payment verification, promo code management, and admin panel APIs to manage users, analytics, and configurations.",
+      "Optimized system performance and scalability through efficient code design and architecture improvements.",
+    ],
+    tech: ["React", "Next.js", "Node.js", "MongoDB", "AWS"],
+  },
+  {
     title: "Mazzakotrip",
     desc: [
+      "Developed booking system supporting B2C, B2B, and real-time socket-based chat and notification with Redis Adapter for scalable WebSocket communication.",
       "RBAC and ABAC for admin, agency, agents, users",
       "Designed and implemented UI, backend, and database architecture",
-      "Contributed to socket communication for chat and notification",
     ],
     tech: ["React", "Next.js", "Node.js", "MongoDB", "AWS"],
   },
   {
     title: "Uheardd",
     desc: [
-      "Scholarship programs by companies from different sources",
-      "Created a backend infrastructure with queues and an event bus",
+      "Platform is for the historically black colleges and universities, where we curate the offers, services, and scholarships that are available for black people.",
+      "Resume feedback, Company programs, and scholarships",
+      "Advisors, Instructor to guide the students",
     ],
     tech: ["Node.js", "React"],
   },
   {
     title: "FATC",
     desc: [
-      "Backend that would download, unarchive, parse and insert the data from ticket master's discovery feed in a queue",
-      "Developed queue with redis, bullMQ",
-      "Resolved live production bugs and server issues",
+      "Users can select the events they are going to; events are streamed from Ticketmaster’s discovery feed to our database",
+      "Users can get recommendations of other users to talk to, where they share interests and events they are going to, so they can go together.",
     ],
     tech: ["React", "Node.js", "Express.js", "Postgres-RDS", "AWS"],
   },
@@ -37,7 +46,7 @@ const projects = [
       "Tracks the guards' location using the PWA and attendance with signin and out",
       "Leaflet to visualize the movements of the guard, service worker for notification",
     ],
-    tech: ["Next.js"],
+    tech: ["Next.js", "Prisma", "Neon"],
   },
 ];
 ---

@@ -7,16 +7,25 @@ const projects = [
   {
     title: "Back Date",
     desc: [
-      "React frontend to paint the github activity graph",
-      "Go script to generate dates of the github activity for backdate",
+      "A tool to fetch GitHub activity and allow users to paint over the activity graph",
+      "Generates a JSON file for a Go script to create a Git repository with backdated commits.",
+      "Pushing the repository to GitHub updates the activity graph with the painted design.",
     ],
-    tech: ["Go", "React"],
+    tech: ["Go", "React", "Git"],
+  },
+  {
+    title: "Learniverse",
+    desc: [
+      "Role-based authentication for learners and teachers.",
+      "Teachers can create courses with videos, chapters, and pricing; students can enroll, pay, and participate in quizzes.",
+    ],
+    tech: ["Next.js", "UploadThings", "Prisma"],
   },
   {
     title: "School Profiler",
     desc: [
-      "Frontend portion of the school was in Next.js",
-      "Authentication was done with jwt in postgrest",
+      "UI in Next.js for visitor, students, teacher and staff",
+      "Auth and roles done with jwt in postgrest with data in postgresql",
     ],
     tech: ["Next.js", "PostgRest", "Docker"],
   },
@@ -29,23 +38,26 @@ const projects = [
     tech: ["Next.js", "PWA"],
   },
   {
-    title: "UD Engrave",
+    title: "UD Engrave: Portfolio & Order Management",
     desc: [
-      "Ecommerce website, takes orders and custom builds",
-      "Laser printed tokens, with manual payment checkouts",
+      "Portfolio website showcasing UD Enterprise’s laser engravings",
+      "Order placement, tracking, and management system with real-time updates.",
+      "Admin dashboard to manage products, orders, and customer inquiries.",
     ],
-    tech: ["Next.js", "Neon", "Drizzle"],
+    tech: ["Next.js", "Neon", "Drizzle", "Motion"],
   },
   {
     title: "S3G",
     desc: [
-      "Photography sharing platform with RBAC",
-      "Likes, notifications, push notifications",
+      "Role-based access control (Admin, User) with authentication and profile management.",
+      "Upload and manage images directly on AWS S3 with React Query integration.",
+      "Next.js MDX for blog/content support, gallery view with likes, and personalized profiles.",
+      "Admin panel for moderation and activity insights.",
     ],
-    tech: ["Next.js", "Neon", "AWS S3", "React Query"],
+    tech: ["Next.js", "Drizzle", "Neon", "AWS S3", "React Query", "Motion"],
   },
   {
-    title: "S3G",
+    title: "Gallery",
     desc: [
       "Photography sharing platform with RBAC, photos approvals, user approvals",
     ],
