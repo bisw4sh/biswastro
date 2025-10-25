@@ -1,0 +1,81 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const projects = [
+  {
+  title: "Mazzakotrip",
+    desc: [
+    "RBAC and ABAC for admin, agency, agents, users",
+      "Designed and implemented UI, backend, and database architecture",
+      "Contributed to socket communication for chat and notification",
+    ],
+    tech: ["React", "Next.js", "Node.js", "MongoDB", "AWS"]
+  },
+  {
+    title: "Uheardd",
+    desc: [
+      "Scholarship programs by companies from different sources",
+      "Created a backend infrastructure with queues and an event bus",
+    ],
+    tech: ["Node.js", "React"]
+  },
+  {
+    title: "FATC",
+    desc: [
+    "Backend that would download, unarchive, parse and insert the data from ticket master's discovery feed in a queue",
+    "Developed queue with redis, bullMQ",
+      "Resolved live production bugs and server issues"
+    ],
+    tech: ["React", "Node.js", "Express.js", "Postgres-RDS", "AWS"]
+    },
+{
+    title: "Attenzone",
+    desc: [
+    "Guard Management System, with admin, guardoffice and client ",
+    "Tracks the guards' location using the PWA and attendance with signin and out",
+    "Leaflet to visualize the movements of the guard, service worker for notification"
+    ],
+    tech: ["Next.js"]
+  }
+
+];
+---
+
+<!DOCTYPE html>
+<html
+>
+  <Header title="Software Development | Biswash Dhungana" />
+  <body>
+    <div class="content">
+        <Sidebar selectedItem="software-development" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Software Development</h1>
+            <section class="items-container">
+                <div class="resouce-items">
+                    {projects.map(project => (
+                      <Project 
+                        title={project.title} 
+                        desc={project.desc}
+                        tech={project.tech}
+                      />
+                    ))}
+                  </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

@@ -1,0 +1,92 @@
+---
+import Header from '../components/Header.astro';
+import Project from '../components/Project.astro';
+import Sidebar from '../components/Sidebar.astro';
+
+const projects = [
+{
+    title: "Back Date",
+    desc: [
+      "React frontend to paint the github activity graph",
+      "Go script to generate dates of the github activity for backdate"
+    ],
+    tech: ["Go", "React"]
+  },
+  {
+    title: "School Profiler",
+    desc: [
+      "Frontend portion of the school was in Next.js",
+      "Authentication was done with jwt in postgrest"
+    ],
+    tech: ["Next.js", "PostgRest", "Docker"]
+  },
+  {
+    title: "Track Me",
+    desc: [
+    "Tracks the user in background with PWA, syncs the data in server when in foreground",
+    "Local first and when network is available, sync the location records"
+    ],
+    tech: ["Next.js", "PWA"]
+  },
+  {
+    title: "UD Engrave",
+    desc: [
+    "Ecommerce website, takes orders and custom builds",
+    "Laser printed tokens, with manual payment checkouts"
+    ],
+    tech: ["Next.js", "Neon", "Drizzle"]
+  },
+  {
+    title: "S3G",
+    desc: [
+    "Photography sharing platform with RBAC",
+    "Likes, notifications, push notifications"
+    ],
+    tech: ["Next.js", "Neon", "AWS S3", "React Query"]
+    },
+    {
+    title: "S3G",
+    desc: [
+    "Photography sharing platform with RBAC, photos approvals, user approvals",
+    ],
+    tech: ["Next.js", "Neon", "React Query", "Supabase"]
+  }
+];
+---
+
+<!DOCTYPE html>
+<html
+>
+  <Header title="Personal Projects | Biswash Dhungana" />
+  <body>
+    <div class="content">
+        <Sidebar selectedItem="personal-projects" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Personal Projects</h1>
+            <section class="items-container">
+                <div class="resouce-items">
+                    {projects.map(project => (
+                      <Project 
+                        title={project.title} 
+                        desc={project.desc}
+                        tech={project.tech}
+                      />
+                    ))}
+                  </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>
