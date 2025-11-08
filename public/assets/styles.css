@@ -703,7 +703,7 @@ p {
 }
 
 .experience-list strong {
-  color: #ffffff; /* highlight key text like roles or companies */
+  color: #a8a8a8; /* highlight key text like roles or companies */
   font-weight: 500;
   letter-spacing: 0.1px;
 }
@@ -716,7 +716,7 @@ p {
 .projects-section h4,
 .projects-section h5,
 .projects-section h6 {
-  color: #ffffff; /* make sure headings are white */
+  color: #a8a8a8; /* make sure headings are white */
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   line-height: 1.4;
@@ -725,6 +725,6 @@ p {
 
 .projects-section p,
 .projects-section li {
-  color: #e6e6e6; /* lighter gray for readability */
+  color: #a8a8a8; /* lighter gray for readability */
   line-height: 1.6;
 }
