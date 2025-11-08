@@ -687,3 +687,44 @@ p {
     height: 64px;
   }
 }
+
+.experience-list {
+  color: #e6e6e6; /* softer white for better contrast */
+  list-style-type: disc;
+  margin-left: 1.75rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: 0.2px;
+}
+
+.experience-list li {
+  margin-bottom: 0.6rem;
+}
+
+.experience-list strong {
+  color: #ffffff; /* highlight key text like roles or companies */
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+.experience-list em {
+  color: #a8a8a8; /* subtle contrast for dates or locations */
+  font-style: normal;
+}
+
+.projects-section h4,
+.projects-section h5,
+.projects-section h6 {
+  color: #ffffff; /* make sure headings are white */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.projects-section p,
+.projects-section li {
+  color: #e6e6e6; /* lighter gray for readability */
+  line-height: 1.6;
+}
