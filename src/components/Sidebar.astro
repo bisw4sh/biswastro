@@ -103,6 +103,35 @@ const { selectedItem } = Astro.props;
         <div>Experience</div>
       </a>
 
+      <a
+        href="/about"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === "about" ? "w--current" : ""
+        }`}
+      >
+        <img
+          src="/assets/about.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>About Me</div>
+      </a>
+
+      <a
+        href="/resume"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === "resume" ? "w--current" : ""
+        }`}
+      >
+        <img
+          src="/assets/resume.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Resume</div>
+      </a>
     </nav>
 
     <div
