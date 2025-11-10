@@ -26,7 +26,6 @@ const { selectedItem } = Astro.props;
         </div>
       </div>
     </a>
-
     <nav role="navigation" class="w-nav-menu">
       <a
         href="/"
@@ -87,7 +86,6 @@ const { selectedItem } = Astro.props;
         />
         <div>Personal projects</div>
       </a>
-
       <a
         href="/experience"
         class={`nav-link-container w-inline-block ${
@@ -102,7 +100,6 @@ const { selectedItem } = Astro.props;
         />
         <div>Experience</div>
       </a>
-
       <a
         href="/about"
         class={`nav-link-container w-inline-block ${
@@ -117,7 +114,6 @@ const { selectedItem } = Astro.props;
         />
         <div>About Me</div>
       </a>
-
       <a
         href="/resume"
         class={`nav-link-container w-inline-block ${
@@ -133,29 +129,35 @@ const { selectedItem } = Astro.props;
         <div>Resume</div>
       </a>
     </nav>
-
-    <div
+    <button
       class="navbar-icon-button w-nav-button"
-      style="-webkit-user-select: text;"
-      aria-label="menu"
-      role="button"
-      tabindex="0"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      type="button"
     >
       <img src="/assets/menu.svg" loading="eager" alt="" class="navbar-icon" />
-    </div>
+    </button>
   </div>
-
-  <script>
-    import { setupNav } from "../scripts/nav.js";
-
-    let cleanup;
-    document.addEventListener("astro:page-load", () => {
-      if (cleanup) cleanup();
-      cleanup = setupNav();
-    });
-
-    document.addEventListener("astro:before-swap", () => {
-      if (cleanup) cleanup();
-    });
-  </script>
 </aside>
+
+<script>
+  import { setupNav } from "../scripts/nav.js";
+
+  let cleanup;
+
+  const initNav = () => {
+    if (cleanup) cleanup();
+    cleanup = setupNav();
+  };
+
+  // Initialize on page load
+  document.addEventListener("astro:page-load", initNav);
+
+  // Cleanup before navigation
+  document.addEventListener("astro:before-swap", () => {
+    if (cleanup) cleanup();
+  });
+
+  // Initialize on first load
+  initNav();
+</script>
