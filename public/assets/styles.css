@@ -7,18 +7,18 @@
   --color-bg-secondary: #1c1c1c;
   --color-bg-tertiary: #202020;
   --color-bg-dark: #2b2b2b;
-  
+
   /* Colors - Text */
   --color-text-primary: #fff;
   --color-text-secondary: #a8a8a8;
   --color-text-tertiary: #333;
   --color-text-light: #e6e6e6;
-  
+
   /* Colors - Borders */
   --color-border-primary: #353535;
   --color-border-secondary: #363636;
   --color-border-light: rgba(0, 0, 0, 0);
-  
+
   /* Colors - Accents */
   --color-accent-blue: #3898ec;
   --color-accent-black: rgba(0, 0, 0, 0);
@@ -27,16 +27,16 @@
   --color-overlay-subtle: rgba(8, 8, 8, 0.24);
   --color-overlay-strong: rgba(8, 8, 8, 0.82);
   --color-glass-bg: rgba(53, 53, 53, 0.12);
-  
+
   /* Colors - Opacity */
   --color-nav-link: #a8a8a8;
   --color-nav-icon-opacity: 0.48;
-  
+
   /* Fonts */
   --font-family-primary: IBM Plex Sans, sans-serif;
   --font-family-mono: IBM Plex Mono, sans-serif;
   --font-family-fallback: Arial, sans-serif;
-  
+
   /* Font Sizes */
   --font-size-xs: 10px;
   --font-size-sm: 12px;
@@ -48,7 +48,7 @@
   --font-size-3xl: 32px;
   --font-size-4xl: 38px;
   --font-size-5xl: 58px;
-  
+
   /* Line Heights */
   --line-height-tight: 20px;
   --line-height-normal: 22px;
@@ -57,7 +57,7 @@
   --line-height-very-loose: 42px;
   --line-height-heading: 44px;
   --line-height-title: 72px;
-  
+
   /* Spacing */
   --spacing-xs: 2px;
   --spacing-sm: 4px;
@@ -75,23 +75,23 @@
   --spacing-10xl: 64px;
   --spacing-11xl: 68px;
   --spacing-12xl: 82px;
-  
+
   /* Border Radius */
   --border-radius-none: 0;
   --border-radius-sm: 8px;
   --border-radius-md: 12px;
   --border-radius-full: 100px;
-  
+
   /* Transitions */
   --transition-fast: all 40ms;
   --transition-normal: all 0.12s;
   --transition-smooth: all 0.24s;
-  
+
   /* Box Shadows */
   --shadow-sm: 0 2px 4px rgba(8, 8, 8, 0.82);
   --shadow-glass-top: 0 1px 1px rgba(255, 255, 255, 0.24);
   --shadow-glass-bottom: 0 -1px 1px rgba(255, 255, 255, 0.24);
-  
+
   /* Letter Spacing */
   --letter-spacing-wide: 0.75px;
   --letter-spacing-tight: -0.5px;
@@ -599,9 +599,7 @@ p {
   justify-content: center;
   align-items: center;
   display: flex;
-  box-shadow:
-    var(--shadow-glass-top),
-    var(--shadow-glass-bottom);
+  box-shadow: var(--shadow-glass-top), var(--shadow-glass-bottom);
 }
 
 .projects-category-image-container.devops-img {
@@ -731,4 +729,69 @@ p {
     max-width: 100%;
     padding-top: var(--spacing-2xl);
     padding-bottom: var(--spacing-2xl);
-    padding-right:
+    padding-right:;
+  }
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-7xl);
+  margin-top: var(--spacing-10xl);
+  max-width: 800px;
+}
+
+.about-role,
+.about-current {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-loose);
+  color: var(--color-text-secondary);
+  max-width: 70ch;
+}
+
+.about-contact h3 {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-border-primary);
+  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+}
+
+.about-contact p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-loose);
+}
+
+.about-contact a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+}
+
+.about-links {
+  margin-top: var(--spacing-sm);
+  font-family: var(--font-family-mono);
+}
+
+.about-links a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.about-links a:hover {
+  color: var(--color-text-primary);
+}
+
+@media screen and (max-width: 768px) {
+  .about-name {
+    font-size: var(--font-size-3xl);
+  }
+
+  .about-role,
+  .about-current {
+    font-size: var(--font-size-base);
+  }
+}
