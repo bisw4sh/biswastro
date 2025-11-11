@@ -5,28 +5,31 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="About Me | Biswash Dhungana">
   <main>
     <h1>Biswash Dhungana</h1>
-    <h2>Full-Stack Developer</h2>
 
     <p>
-      I am a full-stack developer with years of experience in building reliable
-      and efficient applications. I am also a registered software engineer, well
-      versed in both the <strong>TypeScript</strong> and <strong>Go</strong> ecosystems.
+      i am a full-stack developer with years of experience in building reliable
+      and efficient applications. i am also a registered software engineer, well
+      versed in both the <em><strong>TypeScript</strong> </em>and <em
+        ><strong>Go</strong>
+      </em>ecosystems.
     </p>
 
     <p>
-      I have a deep love for <strong>distributed systems</strong> and <strong
+      i have a deep love for <strong>distributed systems</strong> and <strong
         >cloud computing</strong
-      >. I enjoy creating systems that are scalable, performant, and
+      >. i enjoy creating systems that are scalable, performant, and
       thoughtfully designed.
     </p>
 
     <p>
-      I use <em>Arch Linux</em> and <em>Neovim</em>, by the way.
+      I use <em>arch</em> and <em>nvim</em>, btw.
     </p>
 
     <p>
-      <strong>Current Location:</strong> Pokhara, Nepal
+      <strong>current location:</strong> Pokhara, Nepal
     </p>
+
+    <hr />
 
     <section>
       <h3>Contact</h3>
@@ -54,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <footer>
-      <p>Made with ❤️ and Astro</p>
+      <p>made with ❤️ & <em>astro </em></p>
     </footer>
   </main>
 
@@ -89,6 +92,10 @@ import Layout from "../layouts/Layout.astro";
       margin: 0.25rem 0;
     }
 
+    p > em {
+      color: var(--color-accent-blue);
+    }
+
     a {
       color: #0077cc;
       text-decoration: none;
@@ -96,6 +103,11 @@ import Layout from "../layouts/Layout.astro";
 
     a:hover {
       text-decoration: underline;
+    }
+
+    hr {
+      color: var(--color-overlay-subtle);
+      margin-bottom: 15px;
     }
 
     footer {
