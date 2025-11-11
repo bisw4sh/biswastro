@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Education | Biswash Dhungana">
+  <div class="back-nav-container">
+    <a href="/" class="back-nav-button w-inline-block">
+      <img
+        src="/assets/svgs/back.svg"
+        loading="lazy"
+        alt="Back"
+        class="back-nav-img"
+      />
+      <div>Back</div>
+    </a>
+  </div>
+
+  <h1 class="timeline-title">Education</h1>
+  <section class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h2 class="timeline-institution">Pokhara University</h2>
+        <h3 class="institution-address">📍 Dhungepatan, Pokhara</h3>
+        <p class="timeline-duration">November 2019 – August 2024</p>
+        <p class="timeline-degree">Bachelor in Software Engineering</p>
+        <ul>
+          <li>Data Structures and Algorithms, Analysis of Algorithms</li>
+          <li>Computure Architectures, OOP, Systems Programming</li>
+          <li>
+            Artificial Intelligence and Neural Network, Image Processing, Data
+            Mining, NLP, Computer Graphics
+          </li>
+          <li>Operating Systems,Distributed Systems,</li>
+        </ul>
+        <p class="timeline-detail">GPA: 3.62</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h2 class="timeline-institution">Shree Amarsingh Secondary School</h2>
+        <h3 class="institution-address">📍 Ramghat, Pokhara</h3>
+        <p class="timeline-duration">August 2016 – July 2018</p>
+        <p class="timeline-degree">NEB</p>
+        <ul>
+          <li>Maths</li>
+          <li>Physics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h2 class="timeline-institution">Diamond Secondary School</h2>
+        <h3 class="institution-address">📍 Talchowk, Pokhara</h3>
+        <p class="timeline-duration">2009 – 2015</p>
+        <p class="timeline-degree">SLC</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6xl);
+    position: relative;
+    padding-left: 1.5rem;
+    margin-top: var(--spacing-xl);
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border-primary);
+  }
+
+  .timeline-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-8xl);
+  }
+
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    position: relative;
+  }
+
+  .timeline-dot {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--color-accent-blue);
+    position: absolute;
+    left: -2px;
+    top: 5px;
+  }
+
+  .timeline-content {
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-6xl);
+    box-shadow: var(--shadow-sm);
+    flex: 1;
+
+    .institution-address {
+      font-size: var(--font-size-md);
+      font-weight: 400;
+    }
+  }
+
+  .timeline-institution {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .timeline-duration {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .timeline-degree,
+  .timeline-detail {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+  }
+</style>
