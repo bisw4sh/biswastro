@@ -1,33 +1,78 @@
 ---
-const { title, desc, tech } = Astro.props;
+interface Props {
+  title: string;
+  desc: string[];
+  tech: string[];
+}
+
+const { title, desc, tech } = Astro.props as Props;
 ---
 
 <div class="single-item">
   <h3>{title}</h3>
+
   <div class="project-desc project-desc-list w-richtext">
     <ul role="list">
-      {desc.map((item: string[]) => <li>{item}</li>)}
+      {desc.map((item) => <li>{item}</li>)}
     </ul>
   </div>
-  <div class="mini-label-white">Technologies &amp; tools</div>
+
+  <div class="mini-label-white">Technologies & tools</div>
   <div class="chips-container">
-    {
-      tech.map((techItem: string[]) => (
-        <div class="single-chip">{techItem}</div>
-      ))
-    }
+    {tech.map((techItem) => <div class="single-chip">{techItem}</div>)}
   </div>
 </div>
 
 <style>
+  .single-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .single-item h3 {
+    margin: 0;
+    margin-bottom: var(--spacing-md);
+  }
+
   .project-desc ul {
+    margin: 0;
+    padding-left: 20px;
     letter-spacing: var(--letter-spacing-normal);
     line-height: var(--line-height-normal);
     font-size: var(--font-size-md);
     color: var(--color-text-light);
+  }
 
-    li {
-      padding: 4px;
-    }
+  .project-desc li {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .mini-label-white {
+    color: var(--color-text-primary);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+    line-height: var(--line-height-relaxed);
+    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+  }
+
+  .chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    margin: 0;
+  }
+
+  .single-chip {
+    color: var(--color-text-primary);
+    background-color: var(--color-border-primary);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
   }
 </style>

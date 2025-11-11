@@ -1,26 +1,15 @@
 ---
-import Header from "../components/Header.astro";
-import Sidebar from "../components/Sidebar.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <Header title="Resume | Biswash Dhungana" />
-  <body>
-    <div class="content">
-      <Sidebar selectedItem="resume" />
-      <nav class="main">
-        <div class="container">
-          <main class="pdf-viewer-container">
-            <iframe
-              src="/assets/pdfs/resume.pdf"
-              class="pdf-viewer"
-              title="Biswash Dhungana Resume"></iframe>
-          </main>
-        </div>
-      </nav>
-    </div>
-  </body>
-</html>
+<Layout title="Resume | Biswash Dhungana">
+  <main class="pdf-viewer-container">
+    <iframe
+      src="/assets/pdfs/resume.pdf"
+      class="pdf-viewer"
+      title="Biswash Dhungana Resume"></iframe>
+  </main>
+</Layout>
 
 <style>
   .pdf-viewer-container {

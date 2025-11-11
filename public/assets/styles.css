@@ -454,7 +454,7 @@ p {
   height: 100%;
   background-image:
     linear-gradient(var(--color-overlay-dark), var(--color-overlay-dark)),
-    url("./grid-top-right.svg"),
+    url("./svgs/grid-top-right.svg"),
     linear-gradient(var(--color-overlay-light), var(--color-overlay-light));
   background-position:
     0 0,

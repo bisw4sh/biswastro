@@ -1,7 +1,6 @@
 ---
-import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
 import Project from "../components/Project.astro";
-import Sidebar from "../components/Sidebar.astro";
 
 const projects = [
   {
@@ -11,7 +10,7 @@ const projects = [
       "Implemented Play Console payment verification, promo code management, and admin panel APIs to manage users, analytics, and configurations.",
       "Optimized system performance and scalability through efficient code design and architecture improvements.",
     ],
-    tech: ["React.js", "Node.js", "FireBase", "tsoa"],
+    tech: ["React.js", "Node.js", "Firebase", "tsoa"],
   },
   {
     title: "Mazzakotrip",
@@ -23,7 +22,7 @@ const projects = [
     tech: [
       "React.js",
       "Node.js",
-      "mongoose(mongoDB)",
+      "Mongoose (MongoDB)",
       "Redis",
       "AMQPCloud",
       "AWS",
@@ -36,20 +35,20 @@ const projects = [
       "Resume feedback, Company programs, and scholarships",
       "Advisors, Instructor to guide the students",
     ],
-    tech: ["React", "Node.js", "Redis", "Postgresql(RDS)"],
+    tech: ["React", "Node.js", "Redis", "PostgreSQL (RDS)"],
   },
   {
     title: "FATC",
     desc: [
-      "Users can select the events they are going to; events are streamed from Ticketmaster’s discovery feed to our database",
+      "Users can select the events they are going to; events are streamed from Ticketmaster's discovery feed to our database",
       "Users can get recommendations of other users to talk to, where they share interests and events they are going to, so they can go together.",
     ],
-    tech: ["Node.js", "Express.js", "Postgres(RDS)", "Redis", "AWS"],
+    tech: ["Node.js", "Express.js", "PostgreSQL (RDS)", "Redis", "AWS"],
   },
   {
     title: "Attenzone",
     desc: [
-      "Guard Management System, with admin, guardoffice and client ",
+      "Guard Management System, with admin, guardoffice and client",
       "Tracks the guards' location using the PWA and attendance with signin and out",
       "Leaflet to visualize the movements of the guard, service worker for notification",
     ],
@@ -58,43 +57,99 @@ const projects = [
 ];
 ---
 
-<!doctype html>
-<html>
-  <Header title="Software Development | Biswash Dhungana" />
-  <body>
-    <div class="content">
-      <Sidebar selectedItem="software-development" />
-      <nav class="main">
-        <div class="container">
-          <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block"
-              ><img
-                src="/assets/back.svg"
-                loading="lazy"
-                alt=""
-                class="back-nav-img"
-              />
-              <div>Back</div></a
-            >
-          </div>
-          <div class="content-container">
-            <h1>Software Development</h1>
-            <section class="items-container">
-              <div class="resouce-items">
-                {
-                  projects.map((project) => (
-                    <Project
-                      title={project.title}
-                      desc={project.desc}
-                      tech={project.tech}
-                    />
-                  ))
-                }
-              </div>
-            </section>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </body>
-</html>
+<Layout title="Software Development | Biswash Dhungana">
+  <div class="back-nav-container">
+    <a href="/" class="back-nav-button w-inline-block">
+      <img
+        src="/assets/svgs/back.svg"
+        loading="lazy"
+        alt="back"
+        class="back-nav-img"
+      />
+      <div>Back</div>
+    </a>
+  </div>
+
+  <div class="content-container">
+    <h1>Software Development</h1>
+    <section class="items-container">
+      <div class="resource-items">
+        {
+          projects.map((project) => (
+            <Project
+              title={project.title}
+              desc={project.desc}
+              tech={project.tech}
+            />
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .back-nav-container {
+    color: var(--color-text-primary);
+    letter-spacing: var(--letter-spacing-very-wide);
+    text-transform: uppercase;
+    align-items: center;
+    margin-bottom: var(--spacing-10xl);
+    font-weight: 500;
+    display: flex;
+  }
+
+  .back-nav-img {
+    width: 18px;
+    margin-right: var(--spacing-lg);
+  }
+
+  .back-nav-button {
+    color: var(--color-text-primary);
+    background-color: transparent;
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-lg) calc(var(--spacing-lg) * 1.33);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+  }
+
+  .back-nav-button:hover {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: var(--color-overlay-subtle);
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-7xl);
+    max-width: 800px;
+  }
+
+  .items-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resource-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-10xl);
+  }
+
+  @media screen and (max-width: 768px) {
+    .back-nav-container {
+      margin-bottom: var(--spacing-6xl);
+    }
+
+    .content-container {
+      gap: var(--spacing-5xl);
+    }
+
+    .resource-items {
+      gap: var(--spacing-6xl);
+    }
+  }
+</style>

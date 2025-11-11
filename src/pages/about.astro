@@ -1,88 +1,68 @@
 ---
-import Header from "../components/Header.astro";
-import Project from "../components/Project.astro";
-import Sidebar from "../components/Sidebar.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html>
-  <Header title="About Me | Biswash Dhungana" />
-  <body>
-    <div class="content">
-      <Sidebar selectedItem="about" />
-      <nav class="main">
-        <div class="container">
-          <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block"
-              ><img
-                src="/assets/back.svg"
-                loading="lazy"
-                alt="back"
-                class="back-nav-img"
-              />
-              <div>Back</div></a
-            >
-          </div>
-          <main>
-            <div class="container about-container">
-              <p class="about-role">
-                Software Engineer passionate about building performant and
-                modern web applications with elegant architecture and
-                developer-friendly design. Well versed with Typescript ecosystem
-                and Go, mostly with React, Astro, Tailwind and Node, also
-                familiar both sql, nosql and kv databases.
-              </p>
+<Layout title="About Me | Biswash Dhungana">
+  <div class="back-nav-container">
+    <a href="/" class="back-nav-button w-inline-block"
+      ><img
+        src="/assets/svgs/back.svg"
+        loading="lazy"
+        alt="back"
+        class="back-nav-img"
+      />
+      <div>Back</div></a
+    >
+  </div>
+  <main>
+    <div class="container about-container">
+      <p class="about-role">
+        Software Engineer passionate about building performant and modern web
+        applications with elegant architecture and developer-friendly design.
+        Well versed with Typescript ecosystem and Go, mostly with React, Astro,
+        Tailwind and Node, also familiar both sql, nosql and kv databases.
+      </p>
 
-              <p class="about-current">
-                Currently focusing on full-stack development — designing
-                scalable backends, efficient APIs, and seamless user experiences
-                with modern frontend frameworks.
-              </p>
+      <p class="about-current">
+        Currently focusing on full-stack development — designing scalable
+        backends, efficient APIs, and seamless user experiences with modern
+        frontend frameworks.
+      </p>
 
-              <p>Working from Pokhara, Nepal</p>
+      <p>Working from Pokhara, Nepal</p>
 
-              <section id="contact" class="about-contact">
-                <h3>Contact</h3>
-                <p class="about-links">
-                  <a
-                    href="https://linkedin.com/in/biswashdhungana"
-                    target="_blank">LinkedIn</a
-                  >
-                  ⋄
-                  <a href="https://github.com/bisw4sh" target="_blank">GitHub</a
-                  >
-                  ⋄
-                  <a href="https://gitlab.com/bisw4sh" target="_blank">GitLab</a
-                  >
-                  ⋄
-                  <a href="https://leetcode.com/biswashdhungana" target="_blank"
-                    >LeetCode</a
-                  >
-                  ⋄
-                  <a href="https://x.com/bisw4sh" target="_blank">X</a>
-                  ⋄
-                  <a href="https://facebook.com/bisw4sh" target="_blank"
-                    >Facebook</a
-                  >
-                  ⋄
-                  <a href="https://instagram.com/bisw4sh" target="_blank"
-                    >Instagram</a
-                  >
-                </p>
+      <section id="contact" class="about-contact">
+        <h3>Contact</h3>
+        <p class="about-links">
+          <a href="https://linkedin.com/in/biswashdhungana" target="_blank"
+            >LinkedIn</a
+          >
+          ⋄
+          <a href="https://github.com/bisw4sh" target="_blank">GitHub</a>
+          ⋄
+          <a href="https://gitlab.com/bisw4sh" target="_blank">GitLab</a>
+          ⋄
+          <a href="https://leetcode.com/biswashdhungana" target="_blank"
+            >LeetCode</a
+          >
+          ⋄
+          <a href="https://x.com/bisw4sh" target="_blank">X</a>
+          ⋄
+          <a href="https://facebook.com/bisw4sh" target="_blank">Facebook</a>
+          ⋄
+          <a href="https://instagram.com/bisw4sh" target="_blank">Instagram</a>
+        </p>
 
-                <p>
-                  <strong>Mail me @ </strong>
-                  <a href="mailto:mail@biwashdhungana.com.np">
-                    mail@biwashdhungana.com.np</a
-                  >
-                </p>
-              </section>
-            </div>
-          </main>
-        </div>
-      </nav>
+        <p>
+          <strong>Mail me @ </strong>
+          <a href="mailto:mail@biwashdhungana.com.np">
+            mail@biwashdhungana.com.np</a
+          >
+        </p>
+      </section>
     </div>
-  </body>
-</html>
+  </main>
+</Layout>
 
 <style>
   .about-container {

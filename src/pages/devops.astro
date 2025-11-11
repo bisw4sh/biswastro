@@ -1,7 +1,6 @@
 ---
-import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
 import Project from "../components/Project.astro";
-import Sidebar from "../components/Sidebar.astro";
 
 const projects = [
   {
@@ -15,42 +14,99 @@ const projects = [
 ];
 ---
 
-<html>
-  <Header title="DevOps | Biswash Dhungana" />
-  <body>
-    <div class="content">
-      <Sidebar selectedItem="devops" />
-      <nav class="main">
-        <div class="container">
-          <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block"
-              ><img
-                src="/assets/back.svg"
-                loading="lazy"
-                alt=""
-                class="back-nav-img"
-              />
-              <div>Back</div></a
-            >
-          </div>
-          <div class="content-container">
-            <h1>DevOps</h1>
-            <section class="items-container">
-              <div class="resouce-items">
-                {
-                  projects.map((project) => (
-                    <Project
-                      title={project.title}
-                      desc={project.desc}
-                      tech={project.tech}
-                    />
-                  ))
-                }
-              </div>
-            </section>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </body>
-</html>
+<Layout title="DevOps | Biswash Dhungana">
+  <div class="back-nav-container">
+    <a href="/" class="back-nav-button w-inline-block">
+      <img
+        src="/assets/svgs/back.svg"
+        loading="lazy"
+        alt="back"
+        class="back-nav-img"
+      />
+      <div>Back</div>
+    </a>
+  </div>
+
+  <div class="content-container">
+    <h1>DevOps</h1>
+    <section class="items-container">
+      <div class="resource-items">
+        {
+          projects.map((project) => (
+            <Project
+              title={project.title}
+              desc={project.desc}
+              tech={project.tech}
+            />
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .back-nav-container {
+    color: var(--color-text-primary);
+    letter-spacing: var(--letter-spacing-very-wide);
+    text-transform: uppercase;
+    align-items: center;
+    margin-bottom: var(--spacing-10xl);
+    font-weight: 500;
+    display: flex;
+  }
+
+  .back-nav-img {
+    width: 18px;
+    margin-right: var(--spacing-lg);
+  }
+
+  .back-nav-button {
+    color: var(--color-text-primary);
+    background-color: transparent;
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-lg) calc(var(--spacing-lg) * 1.33);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+  }
+
+  .back-nav-button:hover {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: var(--color-overlay-subtle);
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-7xl);
+    max-width: 800px;
+  }
+
+  .items-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resource-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-10xl);
+  }
+
+  @media screen and (max-width: 768px) {
+    .back-nav-container {
+      margin-bottom: var(--spacing-6xl);
+    }
+
+    .content-container {
+      gap: var(--spacing-5xl);
+    }
+
+    .resource-items {
+      gap: var(--spacing-6xl);
+    }
+  }
+</style>

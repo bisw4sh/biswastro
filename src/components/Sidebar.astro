@@ -1,21 +1,51 @@
 ---
 const { selectedItem } = Astro.props;
+
+const links = [
+  { href: "/", name: "Home", icon: "home.svg", key: "home" },
+  {
+    href: "/software-development",
+    name: "Software Development",
+    icon: "code.svg",
+    key: "software-development",
+  },
+  { href: "/devops", name: "DevOps", icon: "dns.svg", key: "devops" },
+  {
+    href: "/personal-projects",
+    name: "Personal Projects",
+    icon: "favorite.svg",
+    key: "personal-projects",
+  },
+  {
+    href: "/experience",
+    name: "Experience",
+    icon: "history.svg",
+    key: "experience",
+  },
+  { href: "/about", name: "About Me", icon: "about.svg", key: "about" },
+  { href: "/resume", name: "Resume", icon: "resume.svg", key: "resume" },
+  {
+    href: "https://bisw4sh.github.io/hugo-blogs",
+    name: "Blogs",
+    icon: "rss.svg",
+    external: true,
+  },
+];
 ---
 
 <aside
+  class="sidebar w-nav"
   data-animation="default"
   data-collapse="medium"
   data-duration="400"
   data-easing="ease"
   data-easing2="ease"
-  role="banner"
-  class="sidebar w-nav"
 >
   <div class="nav-content">
     <a href="/" class="w-nav-brand" aria-label="home">
       <div class="niv-data">
         <img
-          src="/assets/main.webp"
+          src="/assets/images/main.webp"
           loading="eager"
           alt="Profile picture"
           class="niv-image"
@@ -26,129 +56,37 @@ const { selectedItem } = Astro.props;
         </div>
       </div>
     </a>
+
     <nav role="navigation" class="w-nav-menu">
-      <a
-        href="/"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "home" ? "w--current" : ""
-        }`}
-      >
-        <img
-          src="/assets/home.svg"
-          loading="eager"
-          alt="home"
-          class="nav-link-image"
-        />
-        <div>Home</div>
-      </a>
-      <a
-        href="/software-development"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "software-development" ? "w--current" : ""
-        }`}
-        aria-current={selectedItem === "software-development"
-          ? "page"
-          : undefined}
-      >
-        <img
-          src="/assets/code.svg"
-          loading="eager"
-          alt="software-development"
-          class="nav-link-image"
-        />
-        <div>Software development</div>
-      </a>
-      <a
-        href="/devops"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "devops" ? "w--current" : ""
-        }`}
-      >
-        <img
-          src="/assets/dns.svg"
-          loading="eager"
-          alt="dev ops"
-          class="nav-link-image"
-        />
-        <div>DevOps</div>
-      </a>
-      <a
-        href="/personal-projects"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "personal-projects" ? "w--current" : ""
-        }`}
-      >
-        <img
-          src="/assets/favorite.svg"
-          loading="eager"
-          alt="personal projects"
-          class="nav-link-image"
-        />
-        <div>Personal projects</div>
-      </a>
-      <a
-        href="/experience"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "experience" ? "w--current" : ""
-        }`}
-      >
-        <img
-          src="/assets/history.svg"
-          loading="eager"
-          alt="experience"
-          class="nav-link-image"
-        />
-        <div>Experience</div>
-      </a>
-      <a
-        href="/about"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "about" ? "w--current" : ""
-        }`}
-      >
-        <img
-          src="/assets/about.svg"
-          loading="eager"
-          alt="about"
-          class="nav-link-image"
-        />
-        <div>About Me</div>
-      </a>
-      <a
-        href="/resume"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "resume" ? "w--current" : ""
-        }`}
-      >
-        <img
-          src="/assets/resume.svg"
-          loading="eager"
-          alt="resume"
-          class="nav-link-image"
-        />
-        <div>Resume</div>
-      </a>
-      <a
-        href="https://bisw4sh.github.io/hugo-blogs"
-        class="nav-link-container w-inline-block"
-        target="_blank"
-      >
-        <img
-          src="/assets/rss.svg"
-          loading="eager"
-          alt="Blogs"
-          class="nav-link-image"
-        />
-        <div>Blogs</div>
-      </a>
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class={`nav-link-container w-inline-block ${
+              selectedItem === link.key ? "w--current" : ""
+            }`}
+            aria-current={selectedItem === link.key ? "page" : undefined}
+            target={link.external ? "_blank" : undefined}
+          >
+            <img
+              src={`/assets/svgs/${link.icon}`}
+              alt={link.name}
+              loading="eager"
+              class="nav-link-image"
+            />
+            <div>{link.name}</div>
+          </a>
+        ))
+      }
     </nav>
+
     <button
       class="navbar-icon-button w-nav-button"
       aria-label="Toggle menu"
       aria-expanded="false"
       type="button"
     >
-      <img src="/assets/menu.svg" loading="eager" alt="" class="navbar-icon" />
+      <img src="/assets/svgs/menu.svg" alt="menu" class="navbar-icon" />
     </button>
   </div>
 </aside>
@@ -164,10 +102,8 @@ const { selectedItem } = Astro.props;
   };
 
   document.addEventListener("astro:page-load", initNav);
-
-  document.addEventListener("astro:before-swap", () => {
-    if (cleanup) cleanup();
-  });
+  document.addEventListener("astro:after-swap", initNav);
+  document.addEventListener("astro:before-swap", () => cleanup?.());
 
   initNav();
 </script>

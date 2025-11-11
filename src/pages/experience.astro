@@ -1,241 +1,268 @@
 ---
-import Header from "../components/Header.astro";
-import Sidebar from "../components/Sidebar.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html>
-  <Header title="Work & Training Experience | Biswash Dhungana" />
-  <body>
-    <div class="content">
-      <Sidebar selectedItem="experience" />
-      <nav class="main">
-        <div class="container">
-          <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block"
-              ><img
-                src="/assets/back.svg"
-                loading="lazy"
-                alt="back"
-                class="back-nav-img"
-              />
-              <div>Back</div></a
-            >
-          </div>
+<Layout title="Resume | Biswash Dhungana">
+  <div class="back-nav-container">
+    <a href="/" class="back-nav-button w-inline-block"
+      ><img
+        src="/assets/svgs/back.svg"
+        loading="lazy"
+        alt="back"
+        class="back-nav-img"
+      />
+      <div>Back</div></a
+    >
+  </div>
 
-          <main class="fold-content-container">
-            <div class="fold-content">
-              <h1>Work & Training Experience</h1>
-              <p class="lead">
-                A brief overview of my professional and internship journey,
-                covering projects, responsibilities, and achievements across
-                multiple roles.
-              </p>
-            </div>
-          </main>
-
-          <div class="projects-section">
-            <!-- Aarambhait -->
-            <div class="projects-container">
-              <div class="single-projects-category">
-                <div class="projects-category-image-container">
-                  <img
-                    src="./assets/lamp.svg"
-                    loading="lazy"
-                    alt="Aarambhait Internship"
-                    class="projects-category-image"
-                  />
-                </div>
-              </div>
-              <div class="single-projects-content">
-                <h4>Aarambhait</h4>
-                <div class="mini-label-white gray-color">
-                  Frontend Intern — Gairapatan, Pokhara (June 2024)
-                </div>
-                <ul class="experience-list">
-                  <li>
-                    Built frontend components and implemented authentication
-                    (OAuth and password-based) for <b
-                      >Tishy &amp; Co Restaurant Platform</b
-                    >.
-                  </li>
-                  <li>
-                    Collaborated with design and backend teams for seamless
-                    integration and improved UX consistency.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Aava Technology Nepal -->
-            <div class="projects-container">
-              <div class="single-projects-category">
-                <div class="projects-category-image-container devops-img">
-                  <img
-                    src="./assets/lamp.svg"
-                    loading="lazy"
-                    alt="Aava Technology"
-                    class="projects-category-image"
-                  />
-                </div>
-              </div>
-              <div class="single-projects-content">
-                <h4>Aava Technology Nepal</h4>
-                <div class="mini-label-white gray-color">
-                  Fullstack Developer — Kamalpokhari, Kathmandu (Dec 2024 – May
-                  2025)
-                </div>
-
-                <div class="sub-project">
-                  <h4>· EasyUnsub Email Client</h4>
-                  <ul class="experience-list">
-                    <li>
-                      Built scalable backend services in Node.js (TypeScript),
-                      integrating email providers (Outlook, iMail, Gmail) with
-                      Firebase for authentication and real-time functionality.
-                    </li>
-                    <li>
-                      Implemented Play Console payment verification, promo code
-                      management, and admin panel APIs for user and analytics
-                      control.
-                    </li>
-                    <li>
-                      Enhanced performance and scalability through code
-                      optimization and architectural improvements.
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="sub-project">
-                  <h4>· MazzakoTrip – Flight Booking Platform</h4>
-                  <ul class="experience-list">
-                    <li>
-                      Developed booking system supporting B2C, B2B, and
-                      real-time socket-based chat and notifications with Redis
-                      Adapter.
-                    </li>
-                    <li>
-                      Built REST APIs for booking, user management, and platform
-                      operations.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!-- Golden Technosoft -->
-            <div class="projects-container">
-              <div class="single-projects-category">
-                <div class="projects-category-image-container">
-                  <img
-                    src="./assets/lamp.svg"
-                    loading="lazy"
-                    alt="Golden Technosoft"
-                    class="projects-category-image"
-                  />
-                </div>
-              </div>
-              <div class="single-projects-content">
-                <h4>Golden Technosoft IT Genius Solution</h4>
-                <div class="mini-label-white gray-color">
-                  Fullstack Developer — Remote (May 2025 – June 2025)
-                </div>
-                <ul class="experience-list">
-                  <li>
-                    Continued contributions to <b>MazzakoTrip</b> project.
-                  </li>
-                  <li>
-                    Provided backend and DevOps support for deployment and
-                    scalability improvements.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- TechShark -->
-            <div class="projects-container">
-              <div class="single-projects-category">
-                <div class="projects-category-image-container devops-img">
-                  <img
-                    src="./assets/lamp.svg"
-                    loading="lazy"
-                    alt="TechShark"
-                    class="projects-category-image"
-                  />
-                </div>
-              </div>
-              <div class="single-projects-content">
-                <h4>TechShark</h4>
-                <div class="mini-label-white gray-color">
-                  Backend Developer — Remote, US (June 2025 – Present)
-                </div>
-
-                <div class="sub-project">
-                  <h4>· Uheardd</h4>
-                  <ul class="experience-list">
-                    <li>
-                      Platform designed for HBCUs (Historically Black Colleges
-                      and Universities), curating offers, services, and
-                      scholarships.
-                    </li>
-                    <li>
-                      Implemented features for resume feedback, company
-                      programs, and instructor-guided mentorship.
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="sub-project">
-                  <h4>· Friends and the City</h4>
-                  <ul class="experience-list">
-                    <li>
-                      Developed event-based social matching system that
-                      recommends users based on shared interests and event
-                      attendance.
-                    </li>
-                    <li>
-                      Integrated Ticketmaster’s discovery API for real-time
-                      event synchronization and user recommendations.
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="sub-project">
-                  <h4>· AttenZone</h4>
-                  <ul class="experience-list">
-                    <li>
-                      Developed a guard management web app with live tracking,
-                      attendance monitoring, and geofencing alerts.
-                    </li>
-                    <li>
-                      Implemented map visualization for guard movements,
-                      attendance, and admin alerts for out-of-bound activity.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+  <main class="fold-content-container">
+    <div class="fold-content">
+      <h1>Work & Training Experience</h1>
+      <p class="lead">
+        A brief overview of my professional and internship journey, covering
+        projects, responsibilities, and achievements across multiple roles.
+      </p>
     </div>
-  </body>
-</html>
+  </main>
+
+  <div class="projects-section">
+    <!-- Aarambhait -->
+    <div class="projects-container-text">
+      <div class="single-projects-content">
+        <h4># Aarambhait</h4>
+        <div class="mini-label-white gray-color">
+          Frontend Intern — Gairapatan, Pokhara (June 2024)
+        </div>
+        <ul class="experience-list">
+          <li>
+            Built frontend components and implemented authentication (OAuth and
+            password-based) for <strong>Tishy & Co Restaurant Platform</strong>.
+          </li>
+          <li>
+            Collaborated with design and backend teams for seamless integration
+            and improved UX consistency.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Aava Technology Nepal -->
+    <div class="projects-container-text">
+      <div class="single-projects-content">
+        <h4># Aava Technology Nepal</h4>
+        <div class="mini-label-white gray-color">
+          Fullstack Developer — Kamalpokhari, Kathmandu (Dec 2024 – May 2025)
+        </div>
+
+        <div class="sub-project">
+          <h5>EasyUnsub Email Client</h5>
+          <ul class="experience-list">
+            <li>
+              Built scalable backend services in Node.js (TypeScript),
+              integrating email providers (Outlook, iMail, Gmail) with Firebase
+              for authentication and real-time functionality.
+            </li>
+            <li>
+              Implemented Play Console payment verification, promo code
+              management, and admin panel APIs for user and analytics control.
+            </li>
+            <li>
+              Enhanced performance and scalability through code optimization and
+              architectural improvements.
+            </li>
+          </ul>
+        </div>
+
+        <div class="sub-project">
+          <h5>MazzakoTrip – Flight Booking Platform</h5>
+          <ul class="experience-list">
+            <li>
+              Developed booking system supporting B2C, B2B, and real-time
+              socket-based chat and notifications with Redis Adapter.
+            </li>
+            <li>
+              Built REST APIs for booking, user management, and platform
+              operations.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Golden Technosoft -->
+    <div class="projects-container-text">
+      <div class="single-projects-content">
+        <h4># Golden Technosoft IT Genius Solution</h4>
+        <div class="mini-label-white gray-color">
+          Fullstack Developer — Remote (May 2025 – June 2025)
+        </div>
+        <ul class="experience-list">
+          <li>
+            Continued contributions to <strong>MazzakoTrip</strong> project.
+          </li>
+          <li>
+            Provided backend and DevOps support for deployment and scalability
+            improvements.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TechShark -->
+    <div class="projects-container-text">
+      <div class="single-projects-content">
+        <h4># TechShark</h4>
+        <div class="mini-label-white gray-color">
+          Backend Developer — Remote, US (June 2025 – Present)
+        </div>
+
+        <div class="sub-project">
+          <h5>Uheardd</h5>
+          <ul class="experience-list">
+            <li>
+              Platform designed for HBCUs (Historically Black Colleges and
+              Universities), curating offers, services, and scholarships.
+            </li>
+            <li>
+              Implemented features for resume feedback, company programs, and
+              instructor-guided mentorship.
+            </li>
+          </ul>
+        </div>
+
+        <div class="sub-project">
+          <h5>Friends and the City</h5>
+          <ul class="experience-list">
+            <li>
+              Developed event-based social matching system that recommends users
+              based on shared interests and event attendance.
+            </li>
+            <li>
+              Integrated Ticketmaster's discovery API for real-time event
+              synchronization and user recommendations.
+            </li>
+          </ul>
+        </div>
+
+        <div class="sub-project">
+          <h5>AttenZone</h5>
+          <ul class="experience-list">
+            <li>
+              Developed a guard management web app with live tracking,
+              attendance monitoring, and geofencing alerts.
+            </li>
+            <li>
+              Implemented map visualization for guard movements, attendance, and
+              admin alerts for out-of-bound activity.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
 
 <style>
-  .project-desc {
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
-  }
-
-  .project-desc.project-desc-list {
-    margin-left: calc(var(--spacing-6xl) * -1);
-  }
-
-  .content-container {
-    grid-column-gap: var(--spacing-6xl);
-    grid-row-gap: var(--spacing-6xl);
-    flex-direction: column;
+  .projects-container-text {
     display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-6xl);
+    padding-top: var(--spacing-6xl);
+    border-bottom: 1px solid var(--color-border-primary);
+  }
+
+  .projects-container-text:last-child {
+    border-bottom: none;
+  }
+  .back-nav-container {
+    color: var(--color-text-primary);
+    letter-spacing: var(--letter-spacing-very-wide);
+    text-transform: uppercase;
+    align-items: center;
+    margin-bottom: var(--spacing-10xl);
+    font-weight: 500;
+    display: flex;
+  }
+
+  .back-nav-img {
+    width: 18px;
+    margin-right: var(--spacing-lg);
+  }
+
+  .back-nav-button {
+    color: var(--color-text-primary);
+    background-color: transparent;
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-lg) calc(var(--spacing-lg) * 1.33);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+  }
+
+  .back-nav-button:hover {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: var(--color-overlay-subtle);
+  }
+
+  .fold-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4xl);
+    margin-bottom: var(--spacing-9xl);
+  }
+
+  .fold-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3xl);
+  }
+
+  .lead {
+    max-width: 580px;
+    color: var(--color-text-primary);
+    margin-bottom: 0;
+    line-height: var(--line-height-loose);
+  }
+
+  .projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 800px;
+  }
+
+  .projects-container {
+    display: flex;
+    gap: var(--spacing-6xl);
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-normal);
+  }
+
+  .projects-container:hover h4 {
+    color: var(--color-accent-blue);
+  }
+
+  .single-projects-category {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .projects-category-image-container {
+    min-height: 180px;
+    min-width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-glass-bg);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--border-radius-md);
+    backdrop-filter: blur(4px);
+    box-shadow: var(--shadow-glass-top), var(--shadow-glass-bottom);
   }
 
   .projects-category-image {
@@ -243,10 +270,59 @@ import Sidebar from "../components/Sidebar.astro";
     height: var(--spacing-12xl);
   }
 
+  .single-projects-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .single-projects-content h4 {
+    color: var(--color-text-light);
+    margin: 0;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-4xl);
+    font-weight: 400;
+    line-height: var(--line-height-relaxed);
+  }
+
+  .single-projects-content h5 {
+    color: var(--color-text-light);
+    margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+    font-size: var(--font-size-2xl);
+    font-weight: 500;
+    line-height: var(--line-height-loose);
+    border-bottom: 1px solid var(--color-text-light);
+    padding-bottom: 5px;
+    display: inline-block;
+  }
+  .mini-label-white {
+    color: var(--color-text-primary);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-md);
+    font-weight: 400;
+    line-height: var(--line-height-relaxed);
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .mini-label-white.gray-color {
+    color: var(--color-text-light);
+    text-transform: none;
+  }
+
+  .sub-project {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
   .experience-list {
     color: var(--color-text-light);
     list-style-type: disc;
-    margin-left: 1.75rem;
+    margin: 0;
+    padding-left: 1.75rem;
     font-family: var(--font-family-primary);
     font-size: var(--font-size-md);
     line-height: var(--line-height-loose);
@@ -254,47 +330,32 @@ import Sidebar from "../components/Sidebar.astro";
   }
 
   .experience-list li {
-    margin-bottom: 0.6rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-light);
   }
 
   .experience-list strong {
     color: var(--color-text-light);
     font-weight: 500;
-    letter-spacing: var(--letter-spacing-normal);
   }
 
-  .experience-list em {
-    color: var(--color-text-secondary);
-    font-style: normal;
-  }
-
-  .projects-section h4,
-  .projects-section h5,
-  .projects-section h6 {
-    color: var(--color-text-light);
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    line-height: var(--line-height-loose);
-    font-weight: 500;
-  }
-
-  .projects-section p,
-  .projects-section li {
-    color: var(--color-text-light);
-    line-height: var(--line-height-loose);
-  }
-
-  @media screen and (max-width: 991px) {
-    .content {
+  @media screen and (max-width: 768px) {
+    .projects-container {
       flex-direction: column;
+      gap: var(--spacing-4xl);
     }
 
-    .sidebar {
-      height: auto;
-      max-width: 100%;
-      padding-top: var(--spacing-2xl);
-      padding-bottom: var(--spacing-2xl);
-      padding-right:;
+    .projects-category-image-container {
+      min-height: 120px;
+      min-width: 120px;
+    }
+
+    .fold-content-container {
+      margin-bottom: var(--spacing-6xl);
+    }
+
+    .projects-section {
+      gap: var(--spacing-4xl);
     }
   }
 </style>
