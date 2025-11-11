@@ -57,7 +57,16 @@ const links = [
       </div>
     </a>
 
-    <nav role="navigation" class="w-nav-menu">
+    <button
+      class="mobile-menu-button w-nav-button"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      type="button"
+    >
+      <img src="/assets/svgs/menu.svg" alt="menu" class="navbar-icon" />
+    </button>
+
+    <nav role="navigation" class="nav-menu w-nav-menu">
       {
         links.map((link) => (
           <a
@@ -79,15 +88,6 @@ const links = [
         ))
       }
     </nav>
-
-    <button
-      class="navbar-icon-button w-nav-button"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-      type="button"
-    >
-      <img src="/assets/svgs/menu.svg" alt="menu" class="navbar-icon" />
-    </button>
   </div>
 </aside>
 

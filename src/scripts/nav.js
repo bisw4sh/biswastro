@@ -1,76 +1,71 @@
 export function setupNav() {
-  const navButton = document.querySelector(".navbar-icon-button");
+  const mobileMenuButton = document.querySelector(".mobile-menu-button");
   const navMenu = document.querySelector(".w-nav-menu");
 
-  if (!navButton || !navMenu) {
-    console.error("Nav elements not found");
+  if (!mobileMenuButton || !navMenu) {
+    console.error("Mobile menu elements not found");
     return () => {};
   }
 
-  const toggleNav = (e) => {
+  const toggleMobileMenu = (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    const isOpen = navMenu.classList.contains("is-open");
+    const isOpen = navMenu.classList.contains("nav-menu--open");
 
     if (isOpen) {
-      navMenu.classList.remove("is-open");
-      setTimeout(() => {
-        navMenu.classList.remove("is-visible");
-      }, 250);
+      closeMenu();
     } else {
-      navMenu.classList.add("is-visible");
-      setTimeout(() => {
-        navMenu.classList.add("is-open");
-      }, 10);
+      openMenu();
     }
   };
 
+  const openMenu = () => {
+    navMenu.classList.add("nav-menu--open");
+    mobileMenuButton.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeMenu = () => {
+    navMenu.classList.remove("nav-menu--open");
+    mobileMenuButton.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+
   const handleOutsideClick = (e) => {
-    if (!navButton.contains(e.target) && !navMenu.contains(e.target)) {
-      if (navMenu.classList.contains("is-open")) {
-        navMenu.classList.remove("is-open");
-        setTimeout(() => {
-          navMenu.classList.remove("is-visible");
-        }, 250);
-      }
+    if (!mobileMenuButton.contains(e.target) && !navMenu.contains(e.target)) {
+      closeMenu();
     }
   };
 
   const handleNavLinkClick = () => {
-    if (navMenu.classList.contains("is-open")) {
-      navMenu.classList.remove("is-open");
-      setTimeout(() => {
-        navMenu.classList.remove("is-visible");
-      }, 250);
+    closeMenu();
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Escape" && navMenu.classList.contains("nav-menu--open")) {
+      closeMenu();
+      mobileMenuButton.focus();
     }
   };
 
-  navButton.addEventListener("click", toggleNav);
+  mobileMenuButton.addEventListener("click", toggleMobileMenu);
   document.addEventListener("click", handleOutsideClick);
+  document.addEventListener("keydown", handleKeyPress);
 
-  const navLinks = navMenu.querySelectorAll("a");
+  const navLinks = navMenu.querySelectorAll(".nav-link-container");
   navLinks.forEach((link) => {
     link.addEventListener("click", handleNavLinkClick);
   });
 
-  const handleKeyPress = (e) => {
-    if (e.key === "Escape" && navMenu.classList.contains("is-open")) {
-      navMenu.classList.remove("is-open");
-      setTimeout(() => {
-        navMenu.classList.remove("is-visible");
-      }, 250);
-      navButton.focus();
-    }
-  };
-  document.addEventListener("keydown", handleKeyPress);
-
   return () => {
-    navButton.removeEventListener("click", toggleNav);
+    mobileMenuButton.removeEventListener("click", toggleMobileMenu);
     document.removeEventListener("click", handleOutsideClick);
     document.removeEventListener("keydown", handleKeyPress);
     navLinks.forEach((link) => {
       link.removeEventListener("click", handleNavLinkClick);
     });
+    closeMenu(); // Ensure menu is closed on cleanup
+    document.body.style.overflow = "";
   };
 }

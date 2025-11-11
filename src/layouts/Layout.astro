@@ -17,7 +17,7 @@ const selectedItem =
     <meta charset="UTF-8" />
     <meta name="description" content="Biswash Dhungana - Software Engineer" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -305,6 +305,20 @@ const selectedItem =
     opacity: var(--color-nav-icon-opacity);
   }
 
+  .mobile-menu-button {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    z-index: 1001; /* Ensure button is above menu */
+  }
+
+  .navbar-icon {
+    width: 24px;
+    height: 24px;
+  }
+
   .main {
     width: 100%;
     height: 100%;
@@ -391,6 +405,39 @@ const selectedItem =
       border-right: none;
       border-bottom: 1px solid var(--color-border-primary);
       padding: var(--spacing-4xl);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative; /* Ensure button is positioned relative to sidebar */
+    }
+
+    .w-nav-menu {
+      display: none; /* Hidden by default on mobile */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-bg-secondary);
+      flex-direction: column;
+      padding: var(--spacing-8xl) var(--spacing-4xl);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .w-nav-menu.nav-menu--open {
+      display: flex; /* Shown when open */
+    }
+
+    .mobile-menu-button {
+      display: block; /* Visible on mobile */
+      position: absolute;
+      top: var(--spacing-lg); /* Adjust vertical positioning */
+      right: var(--spacing-lg); /* Position on right side */
+    }
+
+    .w-nav-brand {
+      flex-grow: 1; /* Ensure brand takes available space */
     }
 
     .main {
@@ -405,6 +452,11 @@ const selectedItem =
 
     .sidebar {
       padding: var(--spacing-2xl);
+    }
+
+    .mobile-menu-button {
+      top: var(--spacing-md);
+      right: var(--spacing-md);
     }
   }
 </style>
