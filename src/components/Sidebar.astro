@@ -163,14 +163,11 @@ const { selectedItem } = Astro.props;
     cleanup = setupNav();
   };
 
-  // Initialize on page load
   document.addEventListener("astro:page-load", initNav);
 
-  // Cleanup before navigation
   document.addEventListener("astro:before-swap", () => {
     if (cleanup) cleanup();
   });
 
-  // Initialize on first load
   initNav();
 </script>

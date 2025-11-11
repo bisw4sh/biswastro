@@ -83,3 +83,68 @@ import Sidebar from "../components/Sidebar.astro";
     </div>
   </body>
 </html>
+
+<style>
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-7xl);
+    margin-top: var(--spacing-10xl);
+    max-width: 800px;
+  }
+
+  .about-role,
+  .about-current {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-loose);
+    color: var(--color-text-secondary);
+    max-width: 70ch;
+  }
+
+  .about-contact h3 {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: 400;
+    border-bottom: 1px solid var(--color-border-primary);
+    padding-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+  }
+
+  .about-contact p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-loose);
+  }
+
+  .about-contact a {
+    color: var(--color-accent-blue);
+    text-decoration: none;
+  }
+
+  .about-links {
+    margin-top: var(--spacing-sm);
+    font-family: var(--font-family-mono);
+  }
+
+  .about-links a {
+    color: var(--color-accent-blue);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .about-links a:hover {
+    color: var(--color-text-primary);
+  }
+
+  @media screen and (max-width: 768px) {
+    .about-name {
+      font-size: var(--font-size-3xl);
+    }
+
+    .about-role,
+    .about-current {
+      font-size: var(--font-size-base);
+    }
+  }
+</style>

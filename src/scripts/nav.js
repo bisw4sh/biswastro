@@ -26,7 +26,6 @@ export function setupNav() {
     }
   };
 
-  // Close menu when clicking outside
   const handleOutsideClick = (e) => {
     if (!navButton.contains(e.target) && !navMenu.contains(e.target)) {
       if (navMenu.classList.contains("is-open")) {
@@ -38,7 +37,6 @@ export function setupNav() {
     }
   };
 
-  // Close menu when clicking a nav link
   const handleNavLinkClick = () => {
     if (navMenu.classList.contains("is-open")) {
       navMenu.classList.remove("is-open");
@@ -48,7 +46,6 @@ export function setupNav() {
     }
   };
 
-  // Add event listeners
   navButton.addEventListener("click", toggleNav);
   document.addEventListener("click", handleOutsideClick);
 
@@ -57,7 +54,6 @@ export function setupNav() {
     link.addEventListener("click", handleNavLinkClick);
   });
 
-  // Keyboard support (ESC to close)
   const handleKeyPress = (e) => {
     if (e.key === "Escape" && navMenu.classList.contains("is-open")) {
       navMenu.classList.remove("is-open");
@@ -69,7 +65,6 @@ export function setupNav() {
   };
   document.addEventListener("keydown", handleKeyPress);
 
-  // Cleanup function
   return () => {
     navButton.removeEventListener("click", toggleNav);
     document.removeEventListener("click", handleOutsideClick);
